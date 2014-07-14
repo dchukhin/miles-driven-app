@@ -4,16 +4,12 @@ var Record = require('./models/record');
 
 module.exports = function(app, passport) {
 
-	// =====================================
 	// HOME PAGE (with login links) ========
-	// =====================================
 	app.get('/', function(req, res) {
 		res.render('index.ejs'); // load the index.ejs file
 	});
 
-	// =====================================
-	// LOGIN ===============================
-	// =====================================
+	//LOGIN
 	// show the login form
 	app.get('/login', function(req, res) {
 
@@ -28,9 +24,7 @@ module.exports = function(app, passport) {
 		failureFlash : true // allow flash messages
 	}));
 
-	// =====================================
-	// SIGNUP ==============================
-	// =====================================
+	//SIGNUP
 	// show the signup form
 	app.get('/signup', function(req, res) {
 
@@ -45,10 +39,7 @@ module.exports = function(app, passport) {
 		failureFlash : true // allow flash messages
 	}));
 
-
-	// =====================================
-	// PROFILE SECTION =====================
-	// =====================================
+	//PROFILE SECTION
 	// we will want this protected so you have to be logged in to visit
 	// we will use route middleware to verify this (the isLoggedIn function)
         // we also load the records from database so that they can be displayed
@@ -106,9 +97,8 @@ module.exports = function(app, passport) {
 	    });
 	});
 
-	// =====================================
-	// LOGOUT ==============================
-	// =====================================
+
+	//LOGOUT
 	app.get('/logout', function(req, res) {
 		req.logout();
 		res.redirect('/');

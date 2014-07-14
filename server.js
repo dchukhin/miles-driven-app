@@ -1,7 +1,6 @@
 // server.js
 
-// set up ======================================================================
-// get all the tools we need
+//set up
 var express  = require('express');
 var app      = express();
 var port     = process.env.PORT || 8080;
@@ -11,32 +10,37 @@ var flash 	 = require('connect-flash');
 
 var configDB = require('./config/database.js');
 
-// configuration ===============================================================
-mongoose.connect(configDB.url); // connect to our database
-
-require('./config/passport')(passport); // pass passport for configuration
+//configuration
+//connect to database
+mongoose.connect(configDB.url);
+//configure passport
+require('./config/passport')(passport);
 
 app.configure(function() {
 
-	// set up our express application
-	app.use(express.logger('dev')); // log every request to the console
-	app.use(express.cookieParser()); // read cookies (needed for auth)
-	app.use(express.bodyParser()); // get information from html forms
+	//set up our express application
+	//show requests to console
+	app.use(express.logger('dev'));
+	//read cookies
+	app.use(express.cookieParser());
+	//info from HTML forms
+	app.use(express.bodyParser());
 
-	app.set('view engine', 'ejs'); // set up ejs for templating
+	//templating language is EJS
+	app.set('view engine', 'ejs');
 
 	// required for passport
-	app.use(express.session({ secret: 'ilovescotchscotchyscotchscotch' })); // session secret
+	app.use(express.session({ secret: 'secret' }));
 	app.use(passport.initialize());
-	app.use(passport.session()); // persistent login sessions
-	app.use(flash()); // use connect-flash for flash messages stored in session
+	app.use(passport.session());
+	app.use(flash());
 
 });
 
-// routes ======================================================================
-require('./app/routes.js')(app, passport); // load our routes and pass in our app and fully configured passport
+//routes
+require('./app/routes.js')(app, passport);
 
-// launch ======================================================================
+//launch
 app.listen(port);
 console.log('The magic happens on port ' + port);
 

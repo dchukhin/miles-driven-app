@@ -1,5 +1,7 @@
 {
-    "name": "node-authentication",
+    "name": "miles-driven-app",
+    "version":"1.0.0",
+    "description":"An app for tracking the miles you've driven on different days.",
     "main": "server.js",
     "dependencies":{
         "express" : "~3.4.4",

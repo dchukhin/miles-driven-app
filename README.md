@@ -5,11 +5,11 @@ An app to track the miles you have driven over the course of multiple days, usin
 
 ---------
 
-h2. How to use:
+How to use:
 
 1.) npm install miles-driven-app
 
-2.) Navigate to folder with server.js file
+2.) navigate to folder with server.js file
 
 3.) mongod --dbpath ./data
 

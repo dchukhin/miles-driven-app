@@ -1,15 +1,27 @@
 {
-    "name": "miles-driven-app",
-    "version":"1.0.0",
-    "description":"An app for tracking the miles you've driven on different days.",
-    "main": "server.js",
-    "dependencies":{
-        "express" : "~3.4.4",
-        "ejs" : "~0.8.5",
-        "mongoose" : "~3.8.1",
-        "passport" : "~0.1.17",
-        "passport-local" : "~0.1.6",
-        "connect-flash" : "~0.1.1",
-        "bcrypt-nodejs" : "latest"
-    }
+  "name": "miles-driven-app",
+  "version": "1.0.2",
+  "description": "An app for tracking the miles you've driven on different days.",
+  "author": {
+    "name": "Dmitriy Chukhin",
+    "email": "dchukhin@gmail.com"
+  },
+  "main": "server.js",
+  "dependencies": {
+    "express": "~3.4.4",
+    "ejs": "~0.8.5",
+    "mongoose": "~3.8.1",
+    "passport": "~0.1.17",
+    "passport-local": "~0.1.6",
+    "connect-flash": "~0.1.1",
+    "bcrypt-nodejs": "latest"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "readme": "miles-app\n=========\n\n\nAn app to track the miles you have driven over the course of multiple days, using NodeJS, Mongoose, and EJS.\n",
+  "readmeFilename": "README.md",
+  "_id": "miles-driven-app@1.0.1",
+  "_shasum": "0309b237bcaed6d87befdd230fc921a1f28ce558",
+  "_from": "miles-driven-app@"
 }
